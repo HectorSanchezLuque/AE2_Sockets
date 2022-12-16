@@ -89,10 +89,10 @@ public class Proceso implements Runnable {
 
 		boolean loop = true;
 		int pos = 0;
-		int num = 0;
+	
 
 		while (loop) {
-			num = (int) (Math.random() * 8);
+			pos = (int) (Math.random() * 8);
 
 			if (tabla[pos].equals(" ")) {
 				
@@ -103,14 +103,14 @@ public class Proceso implements Runnable {
 
 		}
 		
-		return(tabla.toString());
+		return(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]);
 	}
 
 	public void run() {
 		// TODO Auto-generated method stub
 		String client;
 		boolean acierto = false;
-		String[] tabla = new String[9];
+		String[] tabla = new String[] {" "," "," "," "," "," "," "," "," "};
 		try {
 			InputStream is = socket.getInputStream();
 

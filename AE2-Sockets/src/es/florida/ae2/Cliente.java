@@ -179,6 +179,7 @@ public class Cliente extends JFrame {
 					pw.flush();
 					System.out.println("CLIENTE >>> Recibe resultado del servidor");
 					String resultado = bfr.readLine();
+					System.out.println(resultado);
 					if (resultado.length() == 9) {
 						setBotones(resultado);
 					}
