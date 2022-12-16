@@ -249,6 +249,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn2.getText().equals(" ")) {
 					btn2.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[1] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -261,6 +273,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn3.getText().equals(" ")) {
 					btn3.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[2] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -273,6 +297,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn4.getText().equals(" ")) {
 					btn4.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[3] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -285,6 +321,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn5.getText().equals(" ")) {
 					btn5.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[4] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -297,6 +345,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn6.getText().equals(" ")) {
 					btn6.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[5] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -309,6 +369,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn7.getText().equals(" ")) {
 					btn7.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[6] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -321,6 +393,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn8.getText().equals(" ")) {
 					btn8.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[7] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
@@ -333,6 +417,18 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn9.getText().equals(" ")) {
 					btn9.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[8] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 				}
 			}
 		});
