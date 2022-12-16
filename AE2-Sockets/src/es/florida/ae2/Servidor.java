@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class Servidor {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method
 
 		System.err.println("SERVIDOR >>> Arranca el servidor, espera peticion");
@@ -19,7 +19,7 @@ public class Servidor {
 		}
 		while (true) {
 			Socket conexion = socketEscucha.accept();
-			System.err.println("SERVIDOR >>> Conexion recibida --> Lanza hilo de la tabla");
+			System.err.println("SERVIDOR >>> Conexion recibida --> Lanza hilo Tres en línea");
 			Proceso p = new Proceso(conexion);
 			Thread hilo = new Thread(p);
 			hilo.start();
