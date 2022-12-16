@@ -143,6 +143,8 @@ public class Cliente extends JFrame {
 					pw.print(x + "\n");
 					pw.flush();
 					String resultado = bfr.readLine();
+					System.out.println(resultado);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
