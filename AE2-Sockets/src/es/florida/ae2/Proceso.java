@@ -107,19 +107,18 @@ public class Proceso implements Runnable {
 				acierto = parImpar(Integer.parseInt(client));
 
 				System.out.println("SERVIDOR >> turno del cliente es: " + acierto);
-				
-				if(acierto) {
-					
-					pw.print(acierto);
+
+				if (acierto) {
+
+					pw.print("true\n");
 					pw.flush();
-					
+
+				} else {
+					pw.print("false\n");
+					pw.flush();
 				}
 				System.err.println("SERVIDOR >> ESPERA DE TABLA");
 				client = bfr.readLine();
-				
-				
-				
-				
 
 			}
 			// Ver el tema de la tabla si se espera que le envies la tabla o realiza el el
