@@ -24,6 +24,7 @@ import java.awt.Font;
 public class Cliente extends JFrame {
 
 	private boolean primero;
+	private static int x;
 	private JPanel contentPane;
 	private JButton btn1;
 	private JButton btn2;
@@ -111,13 +112,13 @@ public class Cliente extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-
-		JTextField username = new JTextField();
-		JTextField password = new JPasswordField();
+		
 		boolean login = true;
 		try {
 
-				JOptionPane.showConfirmDialog(password, "a");
+			String[] options = {"par", "impar"};
+
+	        x = JOptionPane.showOptionDialog(null, "Seleccione si es par o impar","Comienzo de la partida",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 
 		} catch (Exception ex) {
 
@@ -139,8 +140,9 @@ public class Cliente extends JFrame {
 					BufferedReader bfr = new BufferedReader(isr);
 					System.out.println("CLIENTE >>> Envio de datos para el calculo");
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
-					pw.print("0\n");
+					pw.print(x + "\n");
 					pw.flush();
+					
 					String resultado = bfr.readLine();
 				} catch (Exception e) {
 					e.printStackTrace();
