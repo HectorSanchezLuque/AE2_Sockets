@@ -13,6 +13,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -24,6 +25,7 @@ import java.awt.Font;
 public class Cliente extends JFrame {
 
 	private boolean primero;
+	private static Socket socket;
 	private static int x;
 	private JPanel contentPane;
 	private static JButton btn1;
@@ -35,6 +37,7 @@ public class Cliente extends JFrame {
 	private static JButton btn7;
 	private static JButton btn8;
 	private static JButton btn9;
+	private static BufferedReader bfr; 
 
 	public JButton getBtn1() {
 		return btn1;
@@ -113,6 +116,12 @@ public class Cliente extends JFrame {
 		return espacios;
 	}
 	
+	public void enviarInformacion(Socket socket, String info) throws IOException {
+		PrintWriter pw = new PrintWriter(socket.getOutputStream());
+		pw.print(info + "\n");
+		pw.flush();
+	}
+	
 	public static void setBotones(String posiciones) {
 		
 		String[] pos = posiciones.split("");
@@ -168,11 +177,11 @@ public class Cliente extends JFrame {
 					System.out.println("CLIENTE >>> Arranca cliente");
 					System.out.println("CLIENTE >>> Conexion con el servidor");
 					InetSocketAddress direccion = new InetSocketAddress("localhost", 1234);
-					Socket socket = new Socket();
+					socket = new Socket();
 					socket.connect(direccion);
 					InputStream is = socket.getInputStream();
 					InputStreamReader isr = new InputStreamReader(is);
-					BufferedReader bfr = new BufferedReader(isr);
+					bfr = new BufferedReader(isr);
 					System.out.println("CLIENTE >>> Envío de la elección");
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
 					pw.print(x + "\n");
@@ -215,6 +224,19 @@ public class Cliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (btn1.getText().equals(" ")) {
 					btn1.setText("X");
+					String info = espaciosTablero();
+					String [] inf = info.split("");
+					inf[0] = "X";
+					info = inf[0]+inf[1]+inf[2]+inf[3]+inf[4]+inf[5]+inf[6]+inf[7]+inf[8];
+					try {
+						enviarInformacion(socket, info);
+						String resultado = bfr.readLine();
+						setBotones(resultado);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
 				}
 			}
 		});
