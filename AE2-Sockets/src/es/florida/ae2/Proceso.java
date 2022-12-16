@@ -108,6 +108,7 @@ public class Proceso implements Runnable {
 
 	public void run() {
 		// TODO Auto-generated method stub
+		String result;
 		String client;
 		boolean acierto = false;
 		String[] tabla = new String[] {" "," "," "," "," "," "," "," "," "};
@@ -138,8 +139,30 @@ public class Proceso implements Runnable {
 					pw.print(insert_O(tabla)+"\n");
 					pw.flush();
 				}
-				System.err.println("SERVIDOR >> ESPERA DE TABLA");
-				client = bfr.readLine();
+				while(true) {
+					System.err.println("SERVIDOR >> ESPERA DE TABLA");
+					client = bfr.readLine();
+					tabla = client.split("");
+					result = compGanador(tabla);
+					System.err.println("SERVIDOR >> el resultado es: "+ result);
+					if(result.equals("continue")) {
+						
+						pw.print(insert_O(tabla)+"\n");
+						pw.flush();
+						
+					}else {
+						
+						pw.print(result);
+						pw.flush();
+						
+						Thread.currentThread().interrupt();
+						
+					}
+					
+					
+					
+				}
+				
 
 			}
 			// Ver el tema de la tabla si se espera que le envies la tabla o realiza el el
