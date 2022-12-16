@@ -26,15 +26,15 @@ public class Cliente extends JFrame {
 	private boolean primero;
 	private static int x;
 	private JPanel contentPane;
-	private JButton btn1;
-	private JButton btn2;
-	private JButton btn3;
-	private JButton btn4;
-	private JButton btn5;
-	private JButton btn6;
-	private JButton btn7;
-	private JButton btn8;
-	private JButton btn9;
+	private static JButton btn1;
+	private static JButton btn2;
+	private static JButton btn3;
+	private static JButton btn4;
+	private static JButton btn5;
+	private static JButton btn6;
+	private static JButton btn7;
+	private static JButton btn8;
+	private static JButton btn9;
 
 	public JButton getBtn1() {
 		return btn1;
@@ -108,6 +108,42 @@ public class Cliente extends JFrame {
 		this.btn9 = btn9;
 	}
 
+	public String espaciosTablero() {
+		String espacios = btn1.getText() + btn2.getText() + btn3.getText() + btn4.getText() + btn5.getText() + btn6.getText() + btn7.getText() + btn8.getText() + btn9.getText();
+		return espacios;
+	}
+	
+	public static void setBotones(String posiciones) {
+		
+		String[] pos = posiciones.split("");
+		
+		for (int i = 0; i < pos.length; i++) {
+			if(i == 0) {
+				btn1.setText(pos[i]);
+			}
+			if(i == 1) {
+				btn2.setText(pos[i]);
+			}
+			if(i == 2) {
+				btn3.setText(pos[i]);
+			}
+			if(i == 3) {
+				btn4.setText(pos[i]);
+			}
+			if(i == 4) {
+				btn5.setText(pos[i]);
+			}
+			if(i == 5) {
+				btn6.setText(pos[i]);
+			}
+			if(i == 7) {
+				btn8.setText(pos[i]);
+			}
+			if(i == 8) {
+				btn9.setText(pos[i]);
+			}
+		}
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -126,24 +162,26 @@ public class Cliente extends JFrame {
 		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				Cliente frame = new Cliente();
+				frame.setVisible(true);
 				try {
-					Cliente frame = new Cliente();
-					frame.setVisible(true);
 					System.out.println("CLIENTE >>> Arranca cliente");
-					System.out.println("CLIENTE >>> Conexion al servidor");
+					System.out.println("CLIENTE >>> Conexion con el servidor");
 					InetSocketAddress direccion = new InetSocketAddress("localhost", 1234);
 					Socket socket = new Socket();
 					socket.connect(direccion);
-					System.out.println("CLIENTE >>> Preparado canal para recibir resultado");
 					InputStream is = socket.getInputStream();
 					InputStreamReader isr = new InputStreamReader(is);
 					BufferedReader bfr = new BufferedReader(isr);
-					System.out.println("CLIENTE >>> Envio de datos para el calculo");
+					System.out.println("CLIENTE >>> Envío de la elección");
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
 					pw.print(x + "\n");
 					pw.flush();
+					System.out.println("CLIENTE >>> Recibe resultado del servidor");
 					String resultado = bfr.readLine();
-					System.out.println(resultado);
+					if (resultado.length() == 9) {
+						setBotones(resultado);
+					}
 					
 				} catch (Exception e) {
 					e.printStackTrace();
