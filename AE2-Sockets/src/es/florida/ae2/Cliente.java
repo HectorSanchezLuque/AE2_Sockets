@@ -142,7 +142,6 @@ public class Cliente extends JFrame {
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
 					pw.print(x + "\n");
 					pw.flush();
-					
 					String resultado = bfr.readLine();
 					System.out.println(resultado);
 					

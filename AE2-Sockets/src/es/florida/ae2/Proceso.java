@@ -85,11 +85,32 @@ public class Proceso implements Runnable {
 		return "continue";
 	}
 
+	static String insert_O(String[] tabla) {
+
+		boolean loop = true;
+		int pos = 0;
+		int num = 0;
+
+		while (loop) {
+			num = (int) (Math.random() * 8);
+
+			if (tabla[pos].equals(" ")) {
+				
+				tabla[pos] = "O";
+				loop = false;
+
+			}
+
+		}
+		
+		return(tabla.toString());
+	}
+
 	public void run() {
 		// TODO Auto-generated method stub
 		String client;
 		boolean acierto = false;
-		String[] tabla;
+		String[] tabla = new String[9];
 		try {
 			InputStream is = socket.getInputStream();
 
@@ -114,7 +135,7 @@ public class Proceso implements Runnable {
 					pw.flush();
 
 				} else {
-					pw.print("false\n");
+					pw.print(insert_O(tabla)+"\n");
 					pw.flush();
 				}
 				System.err.println("SERVIDOR >> ESPERA DE TABLA");
