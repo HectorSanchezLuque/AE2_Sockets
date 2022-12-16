@@ -231,6 +231,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -256,6 +257,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -280,6 +282,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -304,6 +307,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -328,6 +332,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -352,6 +357,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -376,6 +382,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -400,6 +407,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -424,6 +432,7 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						System.out.println(resultado);
 						setBotones(resultado);
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
