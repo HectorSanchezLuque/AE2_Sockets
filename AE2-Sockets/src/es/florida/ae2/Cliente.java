@@ -126,9 +126,9 @@ public class Cliente extends JFrame {
 		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				Cliente frame = new Cliente();
+				frame.setVisible(true);
 				try {
-					Cliente frame = new Cliente();
-					frame.setVisible(true);
 					System.out.println("CLIENTE >>> Arranca cliente");
 					System.out.println("CLIENTE >>> Conexion al servidor");
 					InetSocketAddress direccion = new InetSocketAddress("localhost", 1234);
@@ -142,7 +142,6 @@ public class Cliente extends JFrame {
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
 					pw.print(x + "\n");
 					pw.flush();
-					
 					String resultado = bfr.readLine();
 				} catch (Exception e) {
 					e.printStackTrace();
