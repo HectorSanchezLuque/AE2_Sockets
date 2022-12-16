@@ -139,9 +139,7 @@ public class Cliente extends JFrame {
 					BufferedReader bfr = new BufferedReader(isr);
 					System.out.println("CLIENTE >>> Envio de datos para el calculo");
 					PrintWriter pw = new PrintWriter(socket.getOutputStream());
-					pw.print("+\n");
-					pw.print("100\n");
-					pw.print("50\n");
+					pw.print("0\n");
 					pw.flush();
 					String resultado = bfr.readLine();
 				} catch (Exception e) {
