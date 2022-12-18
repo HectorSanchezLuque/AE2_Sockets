@@ -163,6 +163,10 @@ public class Cliente extends JFrame {
 			String[] options = {"Aceptar la derrota"};
 
 	        x = JOptionPane.showOptionDialog(null, "Fin de la partida","Derrota",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		} else if (res.equals("terminado")){
+			String[] options = {"Aceptar"};
+
+	        x = JOptionPane.showOptionDialog(null, "Fin de la partida","Empate",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		}
 	}
 	/**
@@ -243,13 +247,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -275,13 +288,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -306,13 +328,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -337,13 +368,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -368,13 +408,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -399,13 +448,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -430,13 +488,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -461,12 +528,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
+						System.out.println(resultado);
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						System.out.println(resultado);
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -491,13 +568,22 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						setBotones(resultado);
+						String [] result = resultado.split("");
+						setBotones(result[0]+result[1]+result[2]+result[3]+result[4]+result[5]+result[6]+result[7]+result[8]);
 						System.out.println(resultado);
-						if (resultado.equals("X") || (resultado.equals("O"))) {
-							ComprobarGanador(resultado);
-						} else {
+						if (resultado.length() == 10) {
+							if (result[9].equals("X")) {
+								ComprobarGanador("X");
+							} else {
+								ComprobarGanador("O");
+							}
+						}
+						if (resultado.length() > 10) {
+							ComprobarGanador("terminado");
+						} else {						
 							setBotones(resultado);
 						}
-						
 						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
