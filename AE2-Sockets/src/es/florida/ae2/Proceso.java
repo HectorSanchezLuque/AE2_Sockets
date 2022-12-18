@@ -170,7 +170,7 @@ public class Proceso implements Runnable {
 						
 						if(result.equals("X") || result.equals("O") || result.equals("terminado")) {
 							System.out.println("Ganador es "+result);
-							pw.print(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]+ result+"\n");
+							pw.print(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]+result+"\n");
 							pw.flush();
 			                Thread.currentThread().interrupt();
 
