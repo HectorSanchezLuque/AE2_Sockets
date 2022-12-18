@@ -140,22 +140,33 @@ public class Proceso implements Runnable {
 					pw.flush();
 				}
 				while(true) {
+					
 					System.err.println("SERVIDOR >> ESPERA DE TABLA");
 					client = bfr.readLine();
 					tabla = client.split("");
 					result = compGanador(tabla);
 					System.err.println("SERVIDOR >> el resultado es: "+ result);
+					
 					if(result.equals("continue")) {
 						
-						pw.print(insert_O(tabla)+"\n");
-						pw.flush();
+						tabla = insert_O(tabla).split("");
+						result = compGanador(tabla);
+						
+						if(result.equals("X") || result.equals("O")) {
+							
+							pw.print(result);
+							pw.flush();
+						}{
+							
+							pw.print(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]+ "\n");
+							pw.flush();
+						}
+						
 						
 					}else {
 						
 						pw.print(result);
 						pw.flush();
-						
-						Thread.currentThread().interrupt();
 						
 					}
 					
