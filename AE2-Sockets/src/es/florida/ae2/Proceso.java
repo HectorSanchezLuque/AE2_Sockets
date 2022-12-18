@@ -48,9 +48,6 @@ public class Proceso implements Runnable {
 	   
 		 
 		 String list = board[0]+board[1]+board[2]+board[3]+board[4]+board[5]+board[6]+board[7]+board[8];
-		if( !list.contains(" ")) {
-			return "terminado";
-		}
 		 
 		
 		for (int a = 0; a < 8; a++) {
@@ -92,6 +89,11 @@ public class Proceso implements Runnable {
 				return "O";
 			}
 		}
+		
+		if( !list.contains(" ")) {
+			return "terminado";
+		}
+		
 		return "continue";
 	}
 
