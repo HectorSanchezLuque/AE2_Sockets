@@ -48,7 +48,7 @@ public class Proceso implements Runnable {
 	   
 		 
 		 String list = board[0]+board[1]+board[2]+board[3]+board[4]+board[5]+board[6]+board[7]+board[8];
-		 
+
 		
 		for (int a = 0; a < 8; a++) {
 			String line = null;
@@ -93,7 +93,7 @@ public class Proceso implements Runnable {
 		if( !list.contains(" ")) {
 			return "terminado";
 		}
-		
+		 
 		return "continue";
 	}
 
@@ -176,7 +176,7 @@ public class Proceso implements Runnable {
 
 						}else{
 							System.out.println("Ganador es nadie");
-							pw.print(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]+ "\n");
+							pw.print(tabla[0]+tabla[1]+tabla[2]+tabla[3]+tabla[4]+tabla[5]+tabla[6]+tabla[7]+tabla[8]+"\n");
 							pw.flush();
 						}
 						
