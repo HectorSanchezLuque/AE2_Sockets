@@ -153,6 +153,18 @@ public class Cliente extends JFrame {
 			}
 		}
 	}
+	
+	public void ComprobarGanador(String res) {
+		if (res.equals("X")) {
+			String[] options = {"Aceptar"};
+
+	        x = JOptionPane.showOptionDialog(null, "Fin de la partida","Victoria",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		} else if (res.equals("O")){
+			String[] options = {"Aceptar la derrota"};
+
+	        x = JOptionPane.showOptionDialog(null, "Fin de la partida","Derrota",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+		}
+	}
 	/**
 	 * Launch the application.
 	 */
@@ -232,7 +244,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -258,7 +276,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -283,7 +307,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -308,7 +338,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -333,7 +369,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -358,7 +400,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -383,7 +431,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -407,8 +461,13 @@ public class Cliente extends JFrame {
 					try {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
 						System.out.println(resultado);
-						setBotones(resultado);
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -433,7 +492,13 @@ public class Cliente extends JFrame {
 						enviarInformacion(socket, info);
 						String resultado = bfr.readLine();
 						System.out.println(resultado);
-						setBotones(resultado);
+						if (resultado.equals("X") || (resultado.equals("O"))) {
+							ComprobarGanador(resultado);
+						} else {
+							setBotones(resultado);
+						}
+						
+						
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
