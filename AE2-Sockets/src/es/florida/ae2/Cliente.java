@@ -21,6 +21,7 @@ import java.awt.Font;
 
 public class Cliente extends JFrame {
 
+	JFrame frame = new JFrame();
 	private boolean primero;
 	private static Socket socket;
 	private static int x;
@@ -108,17 +109,31 @@ public class Cliente extends JFrame {
 		this.btn9 = btn9;
 	}
 
+	/**
+	 * Función qué extrae el valor de los botones de la interfaz y los introduce en una variable
+	 * @return String con el valor de los botones
+	 */
 	public String espaciosTablero() {
 		String espacios = btn1.getText() + btn2.getText() + btn3.getText() + btn4.getText() + btn5.getText() + btn6.getText() + btn7.getText() + btn8.getText() + btn9.getText();
 		return espacios;
 	}
 	
+	/**
+	 * Función que envía la información que se desee al servidor
+	 * @param socket Contiene el host y el puerto
+	 * @param info String que se desea enviar
+	 * @throws IOException
+	 */
 	public void enviarInformacion(Socket socket, String info) throws IOException {
 		PrintWriter pw = new PrintWriter(socket.getOutputStream());
 		pw.print(info + "\n");
 		pw.flush();
 	}
 	
+	/**
+	 * Función que establece el valor de cada uno de los botones
+	 * @param posiciones String con el valor que se desea introducir a cada uno de los botones
+	 */
 	public static void setBotones(String posiciones) {
 		
 		String[] pos = posiciones.split("");
@@ -151,6 +166,10 @@ public class Cliente extends JFrame {
 		}
 	}
 	
+	/**
+	 * Función que comprueba el ganador y lanza un JOptionPane con el resultado de la partida
+	 * @param res String que contiene el resultado
+	 */
 	public void ComprobarGanador(String res) {
 		if (res.equals("X")) {
 			String[] options = {"Aceptar"};
@@ -251,12 +270,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -292,12 +315,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -332,12 +359,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -372,12 +403,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -412,12 +447,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -452,12 +491,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -492,12 +535,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -532,12 +579,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}
@@ -572,12 +623,16 @@ public class Cliente extends JFrame {
 						if (resultado.length() == 10) {
 							if (result[9].equals("X")) {
 								ComprobarGanador("X");
+								System.exit(0);
 							} else {
 								ComprobarGanador("O");
+								System.exit(0);
 							}
 						}
 						if (resultado.length() > 10) {
 							ComprobarGanador("terminado");
+							System.exit(0);
+							
 						} else {						
 							setBotones(resultado);
 						}

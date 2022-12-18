@@ -21,6 +21,11 @@ public class Proceso implements Runnable {
 
 	}
 
+	/**
+	 * Función para comprobar quien empieza primero. Se basa en la generación de un número aleatorio
+	 * @param resp Integer cuyo valor es 0 ó 1
+	 * @return True o False dependiendo de si ha acertado o no
+	 */
 	static boolean parImpar(int resp) {
 		int num = (int) (Math.random() * 10 + 1);
 		int result;
@@ -42,8 +47,12 @@ public class Proceso implements Runnable {
 
 	}
 
-	// comprueba el ganador indicando si son la 'X' o 'O' y si no devuelve
-	// 'continue'
+
+	/**
+	 *  Comprueba el ganador indicando si son la 'X' o 'O'
+	 * @param board Array que contiene el tablero
+	 * @return Dependiendo del resultado, devuelve un String con la palabra 'continue', 'O', 'X', 'terminado'
+	 */
 	static String compGanador(String[] board) {
 	   
 		 
@@ -97,6 +106,11 @@ public class Proceso implements Runnable {
 		return "continue";
 	}
 
+	/**
+	 * Introduce en la tabla una O de forma aleatoria
+	 * @param tabla String que contiene el tablero de juego
+	 * @return el String con una 'O' extra
+	 */
 	static String insert_O(String[] tabla) {
 
 		boolean loop = true;
