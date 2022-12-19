@@ -113,7 +113,7 @@ public class Cliente extends JFrame {
 	 * Función qué extrae el valor de los botones de la interfaz y los introduce en una variable
 	 * @return String con el valor de los botones
 	 */
-	public String espaciosTablero() {
+	public static String espaciosTablero() {
 		String espacios = btn1.getText() + btn2.getText() + btn3.getText() + btn4.getText() + btn5.getText() + btn6.getText() + btn7.getText() + btn8.getText() + btn9.getText();
 		return espacios;
 	}
@@ -124,7 +124,7 @@ public class Cliente extends JFrame {
 	 * @param info String que se desea enviar
 	 * @throws IOException
 	 */
-	public void enviarInformacion(Socket socket, String info) throws IOException {
+	public static void enviarInformacion(Socket socket, String info) throws IOException {
 		PrintWriter pw = new PrintWriter(socket.getOutputStream());
 		pw.print(info + "\n");
 		pw.flush();
@@ -170,7 +170,7 @@ public class Cliente extends JFrame {
 	 * Función que comprueba el ganador y lanza un JOptionPane con el resultado de la partida
 	 * @param res String que contiene el resultado
 	 */
-	public void ComprobarGanador(String res) {
+	public static void ComprobarGanador(String res) {
 		if (res.equals("X")) {
 			String[] options = {"Aceptar"};
 
@@ -185,73 +185,11 @@ public class Cliente extends JFrame {
 	        x = JOptionPane.showOptionDialog(null, "Fin de la partida","Empate",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 		}
 	}
+	
 	/**
-	 * Launch the application.
+	 * Función contenedora de los ActionListener() de los botones de la interfaz
 	 */
-	public static void main(String[] args) {
-		
-		boolean login = true;
-		try {
-
-			String[] options = {"par", "impar"};
-
-	        x = JOptionPane.showOptionDialog(null, "Seleccione si es par o impar","Comienzo de la partida",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-
-		} catch (Exception ex) {
-
-			ex.printStackTrace();
-		}
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				Cliente frame = new Cliente();
-				frame.setVisible(true);
-				try {
-					System.out.println("CLIENTE >>> Arranca cliente");
-					System.out.println("CLIENTE >>> Conexion con el servidor");
-					InetSocketAddress direccion = new InetSocketAddress("localhost", 1234);
-					socket = new Socket();
-					socket.connect(direccion);
-					InputStream is = socket.getInputStream();
-					InputStreamReader isr = new InputStreamReader(is);
-					bfr = new BufferedReader(isr);
-					System.out.println("CLIENTE >>> Envío de la elección");
-					PrintWriter pw = new PrintWriter(socket.getOutputStream());
-					pw.print(x + "\n");
-					pw.flush();
-					System.out.println("CLIENTE >>> Recibe resultado del servidor");
-					String resultado = bfr.readLine();
-					System.out.println(resultado);
-					if (resultado.length() == 9) {
-						setBotones(resultado);
-					}
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Cliente() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 534, 430);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 498, 369);
-		contentPane.add(panel);
-		panel.setLayout(null);
-
-		btn1 = new JButton(" ");
-		btn1.setFont(new Font("Tahoma", Font.PLAIN, 99));
+	public static void mickeyMouse() {
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn1.getText().equals(" ")) {
@@ -292,11 +230,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn1.setBounds(0, 0, 166, 113);
-		panel.add(btn1);
-
-		btn2 = new JButton(" ");
-		btn2.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn2.getText().equals(" ")) {
@@ -336,11 +269,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn2.setBounds(166, 0, 166, 113);
-		panel.add(btn2);
-
-		btn3 = new JButton(" ");
-		btn3.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn3.getText().equals(" ")) {
@@ -380,11 +308,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn3.setBounds(332, 0, 166, 113);
-		panel.add(btn3);
-
-		btn4 = new JButton(" ");
-		btn4.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn4.getText().equals(" ")) {
@@ -424,11 +347,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn4.setBounds(0, 129, 166, 113);
-		panel.add(btn4);
-
-		btn5 = new JButton(" ");
-		btn5.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn5.getText().equals(" ")) {
@@ -468,11 +386,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn5.setBounds(166, 129, 166, 113);
-		panel.add(btn5);
-
-		btn6 = new JButton(" ");
-		btn6.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn6.getText().equals(" ")) {
@@ -512,11 +425,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn6.setBounds(332, 129, 166, 113);
-		panel.add(btn6);
-
-		btn7 = new JButton(" ");
-		btn7.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn7.getText().equals(" ")) {
@@ -556,11 +464,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn7.setBounds(0, 258, 166, 113);
-		panel.add(btn7);
-
-		btn8 = new JButton(" ");
-		btn8.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn8.getText().equals(" ")) {
@@ -600,11 +503,6 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
-		btn8.setBounds(166, 258, 166, 113);
-		panel.add(btn8);
-
-		btn9 = new JButton(" ");
-		btn9.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (btn9.getText().equals(" ")) {
@@ -644,6 +542,116 @@ public class Cliente extends JFrame {
 				}
 			}
 		});
+	}
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		boolean login = true;
+		try {
+
+			String[] options = {"par", "impar"};
+
+	        x = JOptionPane.showOptionDialog(null, "Seleccione si es par o impar","Comienzo de la partida",JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+		} catch (Exception ex) {
+
+			ex.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				Cliente frame = new Cliente();
+				frame.setVisible(true);
+				try {
+					System.out.println("CLIENTE >>> Arranca cliente");
+					System.out.println("CLIENTE >>> Conexion con el servidor");
+					InetSocketAddress direccion = new InetSocketAddress("localhost", 1234);
+					socket = new Socket();
+					socket.connect(direccion);
+					InputStream is = socket.getInputStream();
+					InputStreamReader isr = new InputStreamReader(is);
+					bfr = new BufferedReader(isr);
+					System.out.println("CLIENTE >>> Envío de la elección");
+					PrintWriter pw = new PrintWriter(socket.getOutputStream());
+					pw.print(x + "\n");
+					pw.flush();
+					mickeyMouse();
+					System.out.println("CLIENTE >>> Recibe resultado del servidor");
+					String resultado = bfr.readLine();
+					System.out.println(resultado);
+					if (resultado.length() == 9) {
+						setBotones(resultado);
+					}
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Cliente() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 534, 430);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 11, 498, 369);
+		contentPane.add(panel);
+		panel.setLayout(null);
+
+		btn1 = new JButton(" ");
+		btn1.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn1.setBounds(0, 0, 166, 113);
+		panel.add(btn1);
+
+		btn2 = new JButton(" ");
+		btn2.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn2.setBounds(166, 0, 166, 113);
+		panel.add(btn2);
+
+		btn3 = new JButton(" ");
+		btn3.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn3.setBounds(332, 0, 166, 113);
+		panel.add(btn3);
+
+		btn4 = new JButton(" ");
+		btn4.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn4.setBounds(0, 129, 166, 113);
+		panel.add(btn4);
+
+		btn5 = new JButton(" ");
+		btn5.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn5.setBounds(166, 129, 166, 113);
+		panel.add(btn5);
+
+		btn6 = new JButton(" ");
+		btn6.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn6.setBounds(332, 129, 166, 113);
+		panel.add(btn6);
+
+		btn7 = new JButton(" ");
+		btn7.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn7.setBounds(0, 258, 166, 113);
+		panel.add(btn7);
+
+		btn8 = new JButton(" ");
+		btn8.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		btn8.setBounds(166, 258, 166, 113);
+		panel.add(btn8);
+
+		btn9 = new JButton(" ");
+		btn9.setFont(new Font("Tahoma", Font.PLAIN, 99));
 		btn9.setBounds(332, 258, 166, 113);
 		panel.add(btn9);
 	}
