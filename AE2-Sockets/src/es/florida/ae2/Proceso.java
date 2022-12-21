@@ -149,7 +149,7 @@ public class Proceso implements Runnable {
 			pw = new PrintWriter(os);
 
 			client = bfr.readLine();
-			System.err.println("Servidor>> Recivido Info cliente: " + client);
+			System.err.println("Servidor>> Recibido Info cliente: " + client);
 
 			if (client.length() == 1) {
 

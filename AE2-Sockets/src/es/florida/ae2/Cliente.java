@@ -22,7 +22,6 @@ import java.awt.Font;
 public class Cliente extends JFrame {
 
 	JFrame frame = new JFrame();
-	private boolean primero;
 	private static Socket socket;
 	private static int x;
 	private JPanel contentPane;
@@ -142,25 +141,28 @@ public class Cliente extends JFrame {
 			if(i == 0) {
 				btn1.setText(pos[i]);
 			}
-			if(i == 1) {
+			else if(i == 1) {
 				btn2.setText(pos[i]);
 			}
-			if(i == 2) {
+			else if(i == 2) {
 				btn3.setText(pos[i]);
 			}
-			if(i == 3) {
+			else if(i == 3) {
 				btn4.setText(pos[i]);
 			}
-			if(i == 4) {
+			else if(i == 4) {
 				btn5.setText(pos[i]);
 			}
-			if(i == 5) {
+			else if(i == 5) {
 				btn6.setText(pos[i]);
 			}
-			if(i == 7) {
+			else if(i == 6) {
+				btn7.setText(pos[i]);
+			}
+			else if(i == 7) {
 				btn8.setText(pos[i]);
 			}
-			if(i == 8) {
+			else if(i == 8) {
 				btn9.setText(pos[i]);
 			}
 		}
